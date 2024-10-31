@@ -2,14 +2,6 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    colors: {
-      "blue-900": "#0B0D17",
-      "blue-300": "#D0D6F9",
-      white: {
-        default: "#FFFFFF",
-        100: "rgba(255, 255, 255, .1)",
-      },
-    },
     backgroundImage: {
       "Home-mobile": "url('/backgrounds/background-home-mobile.jpg')",
       "Home-tablet": "url('/backgrounds/background-home-tablet.jpg')",
@@ -34,7 +26,16 @@ export default {
       Bellefair: ["Bellefair", "serif"],
       Barlow: ["Barlow", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        "blue-900": "#0B0D17",
+        "blue-300": "#D0D6F9",
+        white: {
+          default: "#FFFFFF",
+          100: "rgba(255, 255, 255, .1)",
+        },
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/typography"),

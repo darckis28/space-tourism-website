@@ -1,11 +1,63 @@
 ---
 import ContainerBlue from "../components/ContainerBlue.astro";
 import Layout from "../layouts/Layout.astro";
+import CardDescriptionPlanet from "../components/CardDescriptionPlanet.astro";
 ---
 
 <Layout title="Destination">
   <main
     class="md:bg-Destination-desktop bg-Destination-mobile sm:bg-Destination-tablet min-h-screen bg-no-repeat bg-center bg-cover">
-    <ContainerBlue> s </ContainerBlue>
+    <ContainerBlue active={false}>
+      <h2 class="text-center tracking-widest sm:text-left md:mb-32">
+        <span class="text-blue-300 font-bold mr-5">01</span> PICK YOUR DEST
+      </h2>
+      <section
+        class="lg:flex lg:items-center lg:pb-11 lg:h-full lg:w-3/4 mx-auto lg:gap-x-10">
+        <div class="mb-10 px-4 lg:flex-1">
+          <img
+            id="img-planet"
+            src="../src/assets/images/destination/image-moon.webp"
+            alt="Moon"
+            class="w-1/2 mx-auto mt-10 lg:w-full"
+          />
+        </div>
+        <CardDescriptionPlanet />
+      </section>
+    </ContainerBlue>
   </main>
+  <script>
+    import data from "../data/data.json" assert { type: "json" };
+    const destination = data.destinations;
+    const getPlanet = (planet: string) =>
+      destination.find((item) => item.name === planet);
+
+    const changePlanet = (e) => {
+      const img = document.querySelector("#img-planet") as HTMLImageElement;
+      const namePlanet = document.querySelector(
+        "#namePlanet"
+      ) as HTMLHeadingElement;
+      const descriptionPlanet = document.querySelector(
+        "#descriptionPlanet"
+      ) as HTMLParagraphElement;
+      const distancePlanet = document.querySelector(
+        "#distance"
+      ) as HTMLParagraphElement;
+      const travelPlanet = document.querySelector(
+        "#travel"
+      ) as HTMLParagraphElement;
+
+      const planet = e.target.textContent;
+      const planetData = getPlanet(planet);
+      const { images, description, distance, travel } = planetData;
+      img.src = images.webp;
+      namePlanet.textContent = planet;
+      descriptionPlanet.textContent = description;
+      distancePlanet.textContent = distance;
+      travelPlanet.textContent = travel;
+    };
+    const options = document.querySelectorAll("#containner span");
+    options.forEach((option) => {
+      option.addEventListener("click", changePlanet);
+    });
+  </script>
 </Layout>
