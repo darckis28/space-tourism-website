@@ -1,0 +1,7 @@
+{
+  "Home": {
+    "mobile": "/backgrounds/background-home-mobile.jpg",
+    "tablet": "/backgrounds/background-home-tablet.jpg",
+    "desktop": "/backgrounds/background-home-desktop.jpg"
+  }
+}

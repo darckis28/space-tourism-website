@@ -1,0 +1,43 @@
+---
+import Logo from "../assets/images/shared/logo.astro";
+---
+
+<nav
+  class="sm:flex justify-between my-10 fixed w-full items-center pl-5 hidden">
+  <Logo />
+
+  <ul
+    class="bg-white-100 backdrop-blur-sm flex gap-12 items-center py-5 sm:pr-5 sm:pl-16 relative">
+    <div
+      class="min-w-[410px] h-[1px] bg-white-default absolute -left-96 hidden md:block">
+    </div>
+    <li>
+      <a
+        href="/"
+        class="uppercase hover:border-b-2 hover:border-white-default transition-all pb-5"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href="/destination"
+        class="uppercase hover:border-b-2 hover:border-white-default transition-all pb-5"
+        >01 Destination
+      </a>
+    </li>
+    <li>
+      <a
+        href="/crew"
+        class="uppercase hover:border-b-2 hover:border-white-default transition-all pb-5"
+        >02 Crew</a
+      >
+    </li>
+    <li>
+      <a
+        href="/technology"
+        class="uppercase hover:border-b-2 hover:border-white-default transition-all pb-5"
+        >03 Technology</a
+      >
+    </li>
+  </ul>
+</nav>
