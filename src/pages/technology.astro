@@ -1,11 +1,102 @@
 ---
 import ContainerBlue from "../components/ContainerBlue.astro";
+import Title from "../components/Title.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Technology">
   <main
     class="md:bg-Technology-desktop bg-Technology-mobile sm:bg-Technology-tablet min-h-screen bg-no-repeat bg-center bg-cover">
-    <ContainerBlue active={false}> <div>a</div> </ContainerBlue>
+    <ContainerBlue active={false}>
+      <Title num="03" title="Space launch 101" />
+      <section class="mt-20 lg:flex lg:flex-row-reverse lg:pb-8">
+        <img
+          src="/images/technology/image-launch-vehicle-portrait.jpg"
+          alt="Launch vehicle"
+          class="aspect-[2/1.5] object-cover mx-auto sm:hidden lg:block lg:aspect-square"
+          id="imageOne"
+        />
+        <img
+          src="/images/technology/image-launch-vehicle-landscape.jpg"
+          alt="Launch vehicle"
+          class="w-full hidden sm:block lg:hidden"
+          id="imageTwo"
+        />
+
+        <div
+          class="px-6 sm:w-[700px] sm:mx-auto lg:flex lg:flex-1 lg:gap-8 lg:items-center lg:max-w-[580px]">
+          <div
+            id="botons"
+            class="font-Bellefair flex gap-4 justify-center my-8 lg:flex-col lg:gap-10">
+            <span
+              class="text-black w-10 h-10 flex justify-center items-center border border-white-default/30 rounded-full cursor-pointer hover:border-white-default duration-300 lg:w-12 lg:h-12 bg-white-default"
+              >1</span
+            >
+            <span
+              class="text-white-default w-10 h-10 flex justify-center items-center border border-white-default/30 rounded-full cursor-pointer hover:border-white-default duration-300 lg:w-12 lg:h-12 bg-transparent"
+              >2</span
+            >
+            <span
+              class="text-white-default w-10 h-10 flex justify-center items-center border border-white-default/30 rounded-full cursor-pointer hover:border-white-default duration-300 lg:w-12 lg:h-12 bg-transparent"
+              >3</span
+            >
+          </div>
+          <div class="text-center pb-8 lg:text-left">
+            <p
+              class="font-Bellefair uppercase text-white-default/50 lg:text-2xl">
+              THE TERMINOLOGY…
+            </p>
+            <h1
+              id="title"
+              class="my-4 font-Bellefair text-2xl uppercase lg:text-4xl">
+              LAUNCH VEHICLE
+            </h1>
+            <p id="descriptionTecnology" class="text-blue-300 text-base">
+              A launch vehicle or carrier rocket is a rocket-propelled vehicle
+              used to carry a payload from Earth's surface to space, usually to
+              Earth orbit or beyond. Our WEB-X carrier rocket is the most
+              powerful in operation. Standing 150 metres tall, it's quite an
+              awe-inspiring sight on the launch pad!
+            </p>
+          </div>
+        </div>
+      </section>
+    </ContainerBlue>
   </main>
 </Layout>
+<script>
+  import data from "../data/data.json";
+  const btns = document.querySelectorAll("#botons span");
+
+  btns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      clearStyleBotons();
+      addStyleBtn(btn);
+      updateInfo(index);
+    });
+  });
+  function updateInfo(idx) {
+    const title = document.querySelector("#title");
+    const imageOne = document.querySelector("#imageOne") as HTMLImageElement;
+    const imageTwo = document.querySelector("#imageTwo") as HTMLImageElement;
+    const descriptionTecnology = document.querySelector(
+      "#descriptionTecnology"
+    );
+    const { name, images, description } = data.technology[idx];
+    title.innerHTML = name;
+    imageOne.src = images.portrait;
+    imageTwo.src = images.landscape;
+    descriptionTecnology.innerHTML = description;
+  }
+  function addStyleBtn(boton) {
+    boton.classList.replace("bg-transparent", "bg-white-default");
+    boton.classList.replace("text-white-default", "text-black");
+  }
+
+  function clearStyleBotons() {
+    btns.forEach((btn) => {
+      btn.classList.replace("bg-white-default", "bg-transparent");
+      btn.classList.replace("text-black", "text-white-default");
+    });
+  }
+</script>
