@@ -1,54 +1,28 @@
-# Astro Starter Kit: Basics
+# Space Tourism Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Descripción
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Este proyecto es una página web para una agencia ficticia de turismo espacial, diseñada con un enfoque moderno y minimalista. La página proporciona información sobre destinos espaciales, tripulación, tecnología y más, y fue desarrollada utilizando **Astro** y **Tailwind CSS** para crear una experiencia optimizada y de fácil mantenimiento.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **[Ver en vivo](https://space-tour-mentor02548.netlify.app/crew/)**
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-## 🚀 Project Structure
+## Tecnologías Utilizadas
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Astro**: Framework estático para mejorar el rendimiento y la estructura del proyecto.
+- **Tailwind CSS**: Framework de CSS para el diseño de estilos modernos y responsivos.
+- **JavaScript**: Para mejorar la interactividad y la lógica del sitio.
+- **Git**: Para el control de versiones y colaboración en el proyecto.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Características
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Diseño Responsivo**: Optimizado para dispositivos móviles, tabletas y escritorio.
+- **Navegación Intuitiva**: Menús organizados y fáciles de usar.
+- **Secciones Informativas**: Páginas dedicadas a destinos espaciales, tripulación, y tecnología relacionada con el turismo espacial.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Instalación y Uso
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/darckis28/space-tourism-website.git
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
